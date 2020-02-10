@@ -11,9 +11,9 @@ class App extends Component {
     this.state = {
       todos: [
         {
-          name: '',
+          task: '',
           id: 1828,
-          checked: false
+          completed: false
         }
       ]
     }
@@ -24,7 +24,7 @@ class App extends Component {
         if(item.id === clickedId) {
           return {
             ...item,
-            checked: !item.checked
+            completed: !item.completed
           } 
         } else {
           return item;
@@ -38,9 +38,9 @@ class App extends Component {
 
   addNewItems = itemText => {
     const newItem = {
-        name: itemText,
+        task: itemText,
         id: Date.now(),
-        checked: false
+        completed: false
     };
     this.setState({
       newTodos: [...this.state.todos, newItem]
@@ -53,7 +53,7 @@ class App extends Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addNewItems={this.addNewItems}/>
-        <TodoList />
+        <TodoList todos={this.todos} toggleTodo={this.toggleTodo} />
       </div>
     );
   }
