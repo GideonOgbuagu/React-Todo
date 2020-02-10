@@ -11,7 +11,7 @@ class TodoList extends Component {
     render() {
         return (
             <div>
-                <p>Hello Gideon!</p>
+                <p>Buy Groceries</p>
             </div>
         )
     }

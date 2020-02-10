@@ -9,15 +9,37 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      todos = [
+        {
+          name: '',
+          id: 1,
+          completed: false
+        }
+      ]
     }
+  }
+
+    toggleTodos = () => {
 
   }
+
+  addNewItems = itemText => {
+    const newItem = {
+        name: itemText,
+        id: Date.now(),
+        completed: false
+    };
+    this.setState({
+      newTodos: [...this.state.todos, newItem]
+    })
+  }
+
+  
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
+        <TodoForm addNewItems={this.addNewItems}/>
         <TodoList />
       </div>
     );
