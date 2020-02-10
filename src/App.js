@@ -9,18 +9,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos = [
+      todos: [
         {
           name: '',
-          id: 1,
+          id: 1828,
           completed: false
         }
       ]
     }
   }
 
-    toggleTodos = () => {
-
+    toggleTodo = clickedId => {
+      const newTodoList = this.state.todos.map(item => {
+        if(item.id === clickedId) {
+          return 
+        }
+      })
   }
 
   addNewItems = itemText => {
