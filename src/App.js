@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       todos: [
         {
-          task: '',
+          task: 'Buy Groceries',
           id: 1828,
           completed: false
         }
@@ -53,7 +53,7 @@ class App extends Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addNewItems={this.addNewItems}/>
-        <TodoList todos={this.todos} toggleTodo={this.toggleTodo} />
+        <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} />
       </div>
     );
   }

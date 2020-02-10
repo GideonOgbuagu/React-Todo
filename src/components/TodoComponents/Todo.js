@@ -5,6 +5,7 @@ export default class Todo extends Component {
         return (
             <div>
                 <p>{this.props.item.task}</p>
+                <button>Clear Todo</button>
             </div>
         )
     }
