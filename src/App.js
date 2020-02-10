@@ -13,7 +13,7 @@ class App extends Component {
         {
           name: '',
           id: 1828,
-          completed: false
+          checked: false
         }
       ]
     }
@@ -22,16 +22,25 @@ class App extends Component {
     toggleTodo = clickedId => {
       const newTodoList = this.state.todos.map(item => {
         if(item.id === clickedId) {
-          return 
+          return {
+            ...item,
+            checked: !item.checked
+          } 
+        } else {
+          return item;
         }
       })
-  }
+
+      this.setState({
+        todos: newTodoList
+      });
+  };
 
   addNewItems = itemText => {
     const newItem = {
         name: itemText,
         id: Date.now(),
-        completed: false
+        checked: false
     };
     this.setState({
       newTodos: [...this.state.todos, newItem]
